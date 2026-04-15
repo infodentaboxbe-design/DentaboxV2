@@ -113,10 +113,21 @@
                 <a class="text-secondary pb-1 hover:text-primary transition-colors duration-300"
                     href="engagement.html">Engagement</a>
             </div>
-            <a href="https://opnform.com/forms/contact-form-wnznts"
-                class="scale-95 active:scale-90 transition-transform bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-medium tracking-wider metallic-gradient inline-block text-center">
-                Commander le Pack
-            </a>
+            <div class="flex items-center gap-2 sm:gap-4">
+                <button id="mobile-menu-button" class="md:hidden text-primary p-1 focus:outline-none flex items-center justify-center">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+                <a href="https://opnform.com/forms/contact-form-wnznts"
+                    class="scale-95 active:scale-90 transition-transform bg-primary text-on-primary px-4 sm:px-6 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase metallic-gradient inline-block text-center whitespace-nowrap">
+                    Commander
+                </a>
+            </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface/95 backdrop-blur-2xl border-t border-outline-variant/10 absolute w-full left-0 top-full flex flex-col shadow-lg">
+            <a class="px-8 py-4 text-secondary hover:text-primary font-medium border-b border-outline-variant/10 uppercase tracking-[0.05em] text-sm" href="../stitch_dentabox_brand_design/index.html">Accueil</a>
+            <a class="px-8 py-4 text-primary font-medium border-b border-outline-variant/10 uppercase tracking-[0.05em] text-sm" href="../stitch_dentabox_brand_design/atelier.html">Nos Produits</a>
+            <a class="px-8 py-4 text-secondary hover:text-primary font-medium uppercase tracking-[0.05em] text-sm" href="../stitch_dentabox_brand_design/engagement.html">Engagement</a>
         </div>
     </nav>
     <main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -368,6 +379,17 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
